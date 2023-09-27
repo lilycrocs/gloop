@@ -15,8 +15,8 @@ function setup() {
   greeting = createElement('h3', 'lilycrocamo');
   greeting.position(10, 0);
 
-  textAlign(CENTER);
-  textSize(50);
+  textAlign(CORNER);
+  textSize(15);
 }
 
 function draw() {
@@ -28,7 +28,7 @@ function greet() {
   const name = input.value();
   // input.value('');
     push();
-    translate(30, 425);
+    translate(15, 395);
     text(name, 0, 0);
     pop();
   
