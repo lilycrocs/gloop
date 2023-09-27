@@ -1,49 +1,37 @@
-let ballx = 200;
-let rectx = 200
-let ballspeed = 5;
-let diameter = 100;
-let move = true;
-let gray = 125; 
+
+let input, button, greeting;
 
 function setup() {
-  createCanvas(400, 400);
-  noStroke()
-  rectMode(CENTER)
+  // create canvas
+  createCanvas(710, 500);
+
+  input = createInput();
+  input.position(15, 350);
+
+  button = createButton('comment');
+  button.position(input.x + input.width, 350);
+  button.mousePressed(greet);
+
+  greeting = createElement('h3', 'lilycrocamo');
+  greeting.position(10, 0);
+
+  textAlign(CENTER);
+  textSize(50);
 }
 
 function draw() {
-  if (millis() > 10000) {
-    background("orange");
-  } else {
-    background(125, 200, 0);
-  }
-  if (ballx >= width - diameter/2 || ballx <= 0 - diameter/2 + 100) {
-    ballspeed = ballspeed * -1;
-  }
-  if (move) {
-    ballx=ballx+ballspeed
-  }
-  fill(gray)
-  ellipse(ballx, height/2, diameter);
-  fill(90, 0, 125, frameCount)
-  rect(rectx, height/5, 90)
+  fill (50, 50, 50)
+  rect(15, 55, 275, 275)
 }
 
-function mouseClicked() {
-  if (move) {
-    move = false;
-  } else {
-    move = true;
-    gray = random(255);
-  }
+function greet() {
+  const name = input.value();
+  // input.value('');
+    push();
+    translate(30, 425);
+    text(name, 0, 0);
+    pop();
+  
 }
 
-function keyPressed() {
-  if (key == 'j' || key == 'J') {
-    if (ballspeed < 0) {
-      console.log("left");
-    } else {
-      console.log("right");
-    }    
-  }
-}
+
