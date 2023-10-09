@@ -1,12 +1,10 @@
-function setup() {
-  createCanvas(windowWidth, windowHeight+1275);
-  noStroke()
-}
-
 let instagram, home, search, explore, messages, notifications, create, profile;
 
-function draw() {
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  noStroke()
   background(20);
+
   instagram = createElement('h1', 'Instagram');
   instagram.position(35, 15);
   instagram.style('color', "white");
@@ -15,21 +13,31 @@ function draw() {
   home.position(50,85)
   home.style('color', "white")
 
+  home.mouseClicked(gotohome)
+
   search = createElement('h2', 'Search');
   search.position(50,140)
   search.style('color', "white")
+
+  search.mouseClicked(gotosearch)
 
   explore = createElement('h2', 'Explore');
   explore.position(50,195)
   explore.style('color', "white")
 
+  explore.mouseClicked(gotoexplore)
+
   messages = createElement('h2', 'Messages');
   messages.position(50,250)
   messages.style('color', "white")
 
+  messages.mouseClicked(gotomessages)
+
   notifications = createElement('h2', 'Notifications');
   notifications.position(50,305)
   notifications.style('color', "white")
+
+  notifications.mouseClicked(gotonotifications)
 
   create = createElement('h2', 'Create');
   create.position(50,360)
@@ -108,12 +116,36 @@ function draw() {
   pfp7.size([25],[25])
 
   fill (35)
-  rect(7, 7, 300, windowHeight+1261)
+  rect(7, 7, 300, windowHeight-14)
 
   fill (35)
-  rect(314, 7, 811, windowHeight+1261)
+  rect(314, 7, 811, windowHeight-14)
 
-  rect(1132,7,301, windowHeight+1261)
+  rect(1132,7,301, windowHeight-14)
+}
+
+function gotohome() {
+  location.href = "index.html"
+}
+
+function gotosearch() {
+  console.log("clicked")
+  location.href = "searchindex.html"
+}
+
+function gotoexplore() {
+  location.href = "exploreindex.html"
+}
+
+function gotomessages() {
+  location.href = "messagesindex.html"
+}
+
+function gotonotifications() {
+  location.href = "notificationsindex.html"
+}
+
+function draw() {
 
   let inp = createInput('');
   inp.position(350, 100);

@@ -1,11 +1,10 @@
+let instagram, home, search, explore, messages, notifications, create, profile;
+
 function setup() {
     createCanvas(windowWidth, windowHeight+1275);
-  }
-  
-  let instagram, home, search, explore, messages, notifications, create, profile;
-  
-  function draw() {
     background(20);
+    noStroke()
+
     instagram = createElement('h1', 'Instagram');
     instagram.position(35, 15);
     instagram.style('color', "white");
@@ -13,22 +12,32 @@ function setup() {
     home = createElement('h2', 'Home');
     home.position(50,85)
     home.style('color', "white")
+
+    home.mouseClicked(gotohome)
   
     search = createElement('h2', 'Search');
     search.position(50,140)
     search.style('color', "white")
+
+    search.mouseClicked(gotosearch)
   
     explore = createElement('h2', 'Explore');
     explore.position(50,195)
     explore.style('color', "white")
+
+    explore.mouseClicked(gotoexplore)
   
     messages = createElement('h2', 'Messages');
     messages.position(50,250)
     messages.style('color', "white")
+
+    messages.mouseClicked(gotomessages)
   
     notifications = createElement('h2', 'Notifications');
     notifications.position(50,305)
     notifications.style('color', "white")
+
+    notifications.mouseClicked(gotonotifications)
   
     create = createElement('h2', 'Create');
     create.position(50,360)
@@ -39,7 +48,7 @@ function setup() {
     profile.style('color', "white")
   
     home2 = createElement('h2', 'Home');
-    home2.position(675, 17)
+    home2.position(690, 17)
     home2.style('color', "white")
   
     square = createElement('h3', 'square');
@@ -117,6 +126,30 @@ function setup() {
     rect(314, 7, 811, windowHeight+1261)
   
     rect(1132,7,301, windowHeight+1261)
-  
-    noStroke()
+
+  }
+
+  function gotohome() {
+    location.href = "index.html"
+  }
+
+  function gotosearch() {
+    console.log("clicked")
+    location.href = "searchindex.html"
+  }
+
+  function gotoexplore() {
+    location.href = "exploreindex.html"
+  }
+
+  function gotomessages() {
+    location.href = "messagesindex.html"
+  }
+
+  function gotonotifications() {
+    location.href = "notificationsindex.html"
+  }
+
+  function draw() {
+
   }
