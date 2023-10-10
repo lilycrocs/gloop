@@ -12,68 +12,72 @@ function setup() {
     home = createElement('h2', 'Home');
     home.position(50,85)
     home.style('color', "white")
-
+  
     home.mouseClicked(gotohome)
   
+    create = createElement('h2', 'Create');
+    create.position(50,140)
+    create.style('color', "white")
+  
+    create.mouseClicked(warning)
+  
     search = createElement('h2', 'Search');
-    search.position(50,140)
+    search.position(50,195)
     search.style('color', "white")
-
+  
     search.mouseClicked(gotosearch)
   
     explore = createElement('h2', 'Explore');
-    explore.position(50,195)
+    explore.position(50,250)
     explore.style('color', "white")
-
+  
     explore.mouseClicked(gotoexplore)
   
     messages = createElement('h2', 'Messages');
-    messages.position(50,250)
+    messages.position(50,305)
     messages.style('color', "white")
-
+  
     messages.mouseClicked(gotomessages)
   
     notifications = createElement('h2', 'Notifications');
-    notifications.position(50,305)
+    notifications.position(50,360)
     notifications.style('color', "white")
-
-    notifications.mouseClicked(gotonotifications)
   
-    create = createElement('h2', 'Create');
-    create.position(50,360)
-    create.style('color', "white")
+    notifications.mouseClicked(gotonotifications)
   
     profile = createElement('h2', 'Profile');
     profile.position(50,415)
     profile.style('color', "white")
+
+    profile.mouseClicked(terminate)
   
     explore2 = createElement('h2', 'Explore');
     explore2.position(675, 17)
     explore2.style('color', "white")
   
-    suggested = createElement('h2', 'Suggested');
+    suggested = createElement('h2', 'You may know:');
     suggested.position(1175, 50)
     suggested.style('color', "white")
   
-    txt = createElement('h5', '@ezpadrinorlfu');
+    txt = createElement('h5', '@obiwangaynobi66');
     txt.position(1215, 95);
     txt.style('color', "white");
   
-    txt2 = createElement('h5', '@erltruonglo');
+    txt2 = createElement('h5', '@ezpadrinorlfu');
     txt2.position(1215, 133);
     txt2.style('color', "white");
   
-    txt3 = createElement('h5', '@ovjanet_jefo');
+    txt3 = createElement('h5', '@cihstephanie.n.rexma');
     txt3.position(1215, 171);
     txt3.style('color', "white");
   
-    txt4 = createElement('h5', '@totallynotabot');
+    txt4 = createElement('h5', '@christiojauchenn3334ff');
     txt4.position(1215, 209);
     txt4.style('color', "white");
   
-    let pfp = createImg("assets/pfp.png");
-    pfp.position(1182, 112)
-    pfp.size([25],[25])
+    let pfp = createImg("assets/obi.png");
+    pfp.position(1181, 112)
+    pfp.size([26],[26])
   
     let pfp2 = createImg("assets/pfp.png");
     pfp2.position(1182, 150)
@@ -129,6 +133,10 @@ function gotohome() {
   location.href = "index.html"
 }
 
+function warning () {
+  window.alert('Warning: Your last post goes against community guidelines. This action will be unavailable for 24 hours. Tell us if you think we made a mistake.')
+}
+
 function gotosearch() {
   console.log("clicked")
   location.href = "searchindex.html"
@@ -146,10 +154,9 @@ function gotonotifications() {
   location.href = "notificationsindex.html"
 }
 
-  function draw() {
-   
-  }
+function terminate () {
+  location.href = "profile.html"
+}
 
-  function spoonLoad () {
-    spoon.loop();
-  }
+  function draw() {
+}
